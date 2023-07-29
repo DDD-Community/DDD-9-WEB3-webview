@@ -2,19 +2,24 @@ import ModalActions from '@components/modal/modal-actions';
 import ModalContent from '@components/modal/modal-content';
 import ModalHeader from '@components/modal/modal-header';
 import { IModal } from '@components/modal/model';
-import { modalStyled } from '@components/modal/styled';
+import { DialogStyled, modalStyled } from '@components/modal/styled';
 import useModalAction from '@hooks/use-modal';
-import Dialog from '@mui/material/Dialog';
+import { useEffect } from 'react';
 
-const Modal = ({children}: IModal) => {
-  const {isOpenModal, onCloseModal} = useModalAction();
+const Modal = ({children, backdrop=false, keepMounted=false}: IModal) => {
+  const { isOpenModal, onCloseModal, key } = useModalAction();
+  if (!isOpenModal) {
+    return null;
+  }
 
   return (
-    <Dialog onClose={onCloseModal}
-            open={isOpenModal}
-            sx={modalStyled}>
+    <DialogStyled key={key}
+                  onClose={backdrop ? onCloseModal : () => {}}
+                  open={isOpenModal}
+                  keepMounted={keepMounted}
+                  sx={modalStyled}>
       {children}
-    </Dialog>
+    </DialogStyled>
   )
 }
 

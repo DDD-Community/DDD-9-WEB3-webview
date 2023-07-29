@@ -23,7 +23,9 @@
       "@components/*": ["./components/*"],
       "@svg/*": ["./svg/*"],
       "@hooks/*": ["./hooks/*"],
-      "@store/*": ["./store/*"]
+      "@store/*": ["./store/*"],
+      "@utils/*": ["./utils/*"],
+      "@hoc/*": ["./hoc/*"]
     }
   },
   "include": ["@types/custom.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],

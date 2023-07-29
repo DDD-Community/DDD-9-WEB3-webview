@@ -1,8 +1,23 @@
-import { IButtonIcon, IButtonText } from '@components/button/model';
+import { IButtonText } from './model';
+import { ButtonTextStyled } from './styled';
+import React from 'react';
 
-const ButtonText = ({ children }: IButtonText) => {
+const ButtonText = ({ children,
+                      buttonSize, buttonTheme,
+                      disabled,
+                      LeftComponent, RightComponent,
+                      onClick, onEnter }: IButtonText) => {
   return (
-    <span>{children}</span>
+    <ButtonTextStyled type={'button'}
+                      size={buttonSize}
+                      theme={buttonTheme}
+                      disabled={disabled}
+                      onClick={onClick}
+                      onEnter={onEnter}>
+      {LeftComponent && LeftComponent}
+      {children}
+      {RightComponent && RightComponent}
+    </ButtonTextStyled>
   )
 }
 

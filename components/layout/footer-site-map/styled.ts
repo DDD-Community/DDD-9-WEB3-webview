@@ -9,6 +9,7 @@ export const FooterSite = styled.footer`
   height: 158px;
   background-color: #F2F2F2;
   margin-top: auto;
+  position: relative;
 `
 
 export const FooterSiteMapStyled = styled.footer`

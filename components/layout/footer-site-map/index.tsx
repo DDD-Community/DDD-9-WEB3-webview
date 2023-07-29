@@ -4,6 +4,10 @@ import { CopyRight, FooterSite, FooterSiteMapStyled, SiteMapStyled } from '@comp
 const FooterSiteMap = () => {
   return (
     <FooterSite>
+      <FooterSiteMapStyled>
+        {SITE_MENU.map((menu, idx) => <SiteMapStyled key={idx}>{menu.title}</SiteMapStyled>)}
+      </FooterSiteMapStyled>
+      <CopyRight>ⓒ 2023 thingsflow Inc.</CopyRight>
     </FooterSite>
   )
 }

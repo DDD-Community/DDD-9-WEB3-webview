@@ -1,12 +1,9 @@
 import { IModalHeader } from '@components/modal/modal-header/model';
-import { modalHeaderStyled } from '@components/modal/modal-header/styled';
-import { DialogTitle } from '@mui/material';
+import { ModalHeaderStyled } from './styled';
 
 const ModalHeader = ({children}: IModalHeader) => {
   return (
-    <DialogTitle sx={modalHeaderStyled}>
-      {children}
-    </DialogTitle>
+    <ModalHeaderStyled>{children}</ModalHeaderStyled>
   );
 }
 

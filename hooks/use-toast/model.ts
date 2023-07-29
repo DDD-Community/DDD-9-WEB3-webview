@@ -1,12 +1,37 @@
-export interface IToastActionState {
-  isOpen: boolean;
-  message: string;
+import React from 'react';
+
+
+export interface IToastBottomPosition {
+  bottom?: number;
+  top?: number;
+}
+
+export const ToastStatus = {
+  success: 'success',
+  failed: 'failed',
+} as const;
+
+export type TToastStatus = keyof typeof ToastStatus;
+
+
+export interface IToastState {
+  toastComponent?: React.ReactNode;
+  message?: string;
+  isToastOpen?: boolean;
   autoHideDuration?: number;
-  anchorOrigin: IAnchorOrigin;
-  onOpen: () => void;
-  onClose: () => void;
+  toastStatus?: TToastStatus;
+  toastPosition?: IToastBottomPosition;
+  anchorOrigin?: IAnchorOrigin;
+}
+
+export interface IToastAction {
+  onToastOpen: (p: IToastState) => void;
+  onToastClose: () => void;
   setMessage: (param: string) => void;
   setAnchorOrigin: (param: IAnchorOrigin) => void;
+  setHideDuration: (param: number) => void;
+  setToastComponent: (param?: React.ReactNode) => void;
+  setToastPosition: (param: IToastBottomPosition) => void;
 }
 
 export const AnchorOriginVertical = {

@@ -1,4 +1,3 @@
-import { ButtonStyledProps } from '@components/button/model';
 import styled from 'styled-components';
 
 export const LoginStyled = styled.section`

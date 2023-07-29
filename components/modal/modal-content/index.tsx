@@ -1,13 +1,11 @@
 import { IModalContent } from '@components/modal/modal-content/model';
-import { modalContentStyled } from '@components/modal/modal-content/styled';
-import { DialogContent } from '@mui/material';
+import { ModalContentStyled } from '@components/modal/modal-content/styled';
 
-const ModalContent = ({children}: IModalContent) => {
+const ModalContent = ({children, dividers = false}: IModalContent) => {
   return (
-    <DialogContent dividers
-                   sx={modalContentStyled}>
+    <ModalContentStyled dividers={dividers}>
       {children}
-    </DialogContent>
+    </ModalContentStyled>
   );
 }
 

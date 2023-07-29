@@ -1,21 +1,7 @@
-import ButtonIcon from '@components/button/button-icon';
-import ButtonText from '@components/button/button-text';
-import { ButtonStyled } from '@components/button/styled';
-import React from 'react';
-import { IButton } from './model';
+import ButtonText from './button-text';
+import ButtonSns from './button-sns';
 
-const Button = ({children, buttonSize, buttonTheme, LeftComponent, RightComponent}: IButton) => {
-  return (
-    <ButtonStyled size={buttonSize}
-                  theme={buttonTheme}>
-      {LeftComponent && LeftComponent}
-      {children}
-      {RightComponent && RightComponent}
-    </ButtonStyled>
-  );
+export {
+  ButtonText,
+  ButtonSns
 }
-
-export const CustomButton = Object.assign(Button, {
-  icon: ButtonIcon,
-  text: ButtonText,
-});
